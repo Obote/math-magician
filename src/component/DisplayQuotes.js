@@ -38,12 +38,18 @@ function DisplayQuote() {
     return <p>error in loading quote</p>;
   }
   return (
-    <div>
-      <ul>
+    <div className="display-quote">
+      <ul className="quote-list">
         {quote.map((dailyquote) => (
-          <li key={dailyquote.id ? dailyquote.id : generateUniqueKey()}>
-            <p>{dailyquote.quote}</p>
-            <p>{dailyquote.author}</p>
+          <li
+            key={dailyquote.id ? dailyquote.id : generateUniqueKey()}
+            className="quote-list-item"
+          >
+            <p className="quote-text">{dailyquote.quote}</p>
+            <p className="author-text">
+              -
+              {dailyquote.author}
+            </p>
           </li>
         ))}
       </ul>

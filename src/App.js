@@ -5,9 +5,18 @@ import DisplayQuote from './component/DisplayQuotes';
 
 function App() {
   return (
-    <div>
-      <Calculator />
-      <DisplayQuote />
+    <div className="container">
+      <header>
+        <h1>Calculator and Random Quote</h1>
+      </header>
+      <div className="main-content">
+        <div className="calculator">
+          <Calculator />
+        </div>
+        <div className="quote">
+          <DisplayQuote />
+        </div>
+      </div>
     </div>
   );
 }
