@@ -1,5 +1,6 @@
 // NavBar.js
 import React from 'react';
+import './navbar.css';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Link } from 'react-router-dom';
 

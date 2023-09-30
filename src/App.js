@@ -1,5 +1,6 @@
 import './App.css';
 import './component/Calculator.css';
+import './component/navbar.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './component/Narbar';
