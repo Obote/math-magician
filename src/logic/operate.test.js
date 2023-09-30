@@ -1,37 +1,27 @@
-import operate from "./operate"; // adjust the import path accordingly
+import operate from "./operate";
 
 describe("operate", () => {
-  it("should add two numbers", () => {
-    expect(operate("2", "3", "+")).toBe("5");
+  it("adds two numbers", () => {
+    expect(operate(1, 2, "+")).toBe("3");
+  });
+  it("subtract two numbers", () => {
+    expect(operate(3, 2, "-")).toBe("1");
+  });
+  it("multiply two numbers", () => {
+    expect(operate(3, 2, "x")).toBe("6");
+  });
+  it("divides two numbers", () => {
+    expect(operate(6, 3, "÷")).toBe("2");
+  });
+  it('returns "Can\'t divide by 0." when dividing by zero', () => {
+    expect(operate(6, 0, "÷")).toBe("Can't divide by 0.");
   });
 
-  it("should subtract two numbers", () => {
-    expect(operate("5", "3", "-")).toBe("2");
+  it("returns \"Can't find modulo as can't divide by 0.\" when finding modulo by zero", () => {
+    expect(operate(6, 0, "%")).toBe("Can't find modulo as can't divide by 0.");
   });
 
-  it("should multiply two numbers", () => {
-    expect(operate("2", "3", "x")).toBe("6");
-  });
-
-  it("should divide two numbers", () => {
-    expect(operate("6", "2", "÷")).toBe("3");
-  });
-
-  it("should handle division by zero", () => {
-    expect(operate("5", "0", "÷")).toBe("Can't divide by 0.");
-  });
-
-  it("should find the modulo of two numbers", () => {
-    expect(operate("5", "3", "%")).toBe("2");
-  });
-
-  it("should handle modulo by zero", () => {
-    expect(operate("5", "0", "%")).toBe(
-      "Can't find modulo as can't divide by 0."
-    );
-  });
-
-  it("should throw an error for an unknown operation", () => {
-    expect(() => operate("2", "3", "^")).toThrow("Unknown operation '^'");
+  it("throws an error when the operation is unknown", () => {
+    expect(() => operate(1, 2, "&")).toThrowError("Unknown operation '&'");
   });
 });
