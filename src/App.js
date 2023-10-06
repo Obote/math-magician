@@ -3,7 +3,7 @@ import './component/Calculator.css';
 import './component/navbar.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './component/Narbar';
+import NavBar from './component/Navbar';
 import Calculator from './component/Calculator';
 import DisplayQuote from './component/DisplayQuotes';
 import Home from './component/Home';
